@@ -1,0 +1,23 @@
+# Rust
+target/
+Cargo.lock
+
+# Node
+node_modules/
+dist/
+.next/
+*.tsbuildinfo
+
+# Circuit artifacts (large binary files)
+circuits/**/*.r1cs
+circuits/**/*.wasm
+circuits/**/*.sym
+circuits/**/*.zkey
+circuits/**/*.ptau
+circuits/**/verification_key.json
+
+# Secrets
+.env
+
+# OS
+.DS_Store

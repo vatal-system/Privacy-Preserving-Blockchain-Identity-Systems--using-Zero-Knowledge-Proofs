@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "identity_registry",
+    "payment_router",
+    "groth16_verifier",
+]
+resolver = "2"
+
+[workspace.dependencies]
+soroban-sdk = { version = "22.0.0" }
