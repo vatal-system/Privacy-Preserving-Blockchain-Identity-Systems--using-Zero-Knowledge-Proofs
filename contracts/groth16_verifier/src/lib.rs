@@ -3,9 +3,6 @@
 //! Stellar Protocol 25 (X-Ray) added native BN254 pairing and Poseidon hash
 //! host functions, making Groth16 verification practical on Soroban.
 //!
-//! This contract wraps those primitives and exposes a single `verify` entry
-//! point that other contracts (e.g. PaymentRouter) call cross-contract.
-//!
 //! Proof format (Groth16 over BN254, Circom convention)
 //! ----------------------------------------------------
 //! pi_a  : G1 point  (64 bytes)
@@ -188,7 +185,7 @@ impl Groth16Verifier {
     /// # TODO for contributors
     /// - Implement the actual pairing check using Soroban's BN254 host functions.
     pub fn verify(env: Env, proof: Proof, public_inputs: Vec<FieldElement>) -> bool {
-        let _vk: Bytes = env
+        let vk: Bytes = env
             .storage()
             .instance()
             .get(&DataKey::VerifyingKey)
